@@ -1,4 +1,12 @@
 StacheOverflow::Application.routes.draw do
+  get "answers/edit"
+  get "answers/index"
+  get "answers/show"
+  get "answers/new"
+  get "answer/edit"
+  get "answer/index"
+  get "answer/show"
+  get "answer/new"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
