@@ -1,7 +1,7 @@
 <h1>Questions Index</h1>
 <ul>
 <% @questions.each do |q| %>
-  <li><%= q.content %></li>
+  <li><%= link_to q.content, question_path(q) %></li>
 <% end %>
 </ul>
 
