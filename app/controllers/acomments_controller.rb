@@ -16,7 +16,8 @@ class AcommentsController < ApplicationController
   end
 
   def create
-    @acomment = Acomment.new(params[:acomment])
+    answer = Answer.find(params[:acomment][:answer_id])
+    @acomment = answer.acomments.create(params[:acomment])
     if @acomment.save
       redirect_to acomment_path(@acomment)
     else
