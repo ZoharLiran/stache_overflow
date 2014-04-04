@@ -1,14 +1,2 @@
 <h1>Answers#new</h1>
-
-<h1>create a new answer</h1>
-<ul>
-  <%= form_for @answer do |f| %>
-    <li>
-      <%= f.label :content %>
-      <%= f.text_field :content %>
-    </li>
-    <li>
-      <%= f.submit %>
-    </li>
-  <% end %>
-</ul>
+<%= render partial: 'form' %>
