@@ -4,22 +4,16 @@
 <ul>
   <h3>Question Comments:</h3>
   <% @question.qcomments.each do |qs| %>
-    <li><%= link_to qs.content, qcomment_path(qs) %></li>
+    <li><%= qs.content %></li>
   <% end %>
-  <h4><%= link_to 'add comment to question', new_qcomment_path(@question) %></h4>
+  <h4><%= link_to 'add comment to question', new_qcomment_path(question_id: @question.id ) %></h4>
 </ul>
 <ul>
   <h3>Answers:</h3>
   <% @question.answers.each do |ans| %>
     <li><%= link_to ans.content, answer_path(ans) %></li>
-    <ol>
-    <h4>Answer Comments:</h4>
-    <% ans.acomments.each do |acom| %>
-      <li><%= link_to acom.content, acomment_path(acom) %></li>
-    <% end %>
-    </ol>
-  <h4><%= link_to 'add comment to answer', new_acomment_path(ans) %></h4>
+
   <% end %>
-  <h4><%= link_to 'add answer to question', new_answer_path(@question.answers) %></h4>
+  <h4><%= link_to 'add answer to question', new_answer_path(question_id: @question.id ) %></h4>
 </ul>
 

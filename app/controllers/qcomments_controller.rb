@@ -16,7 +16,8 @@ class QcommentsController < ApplicationController
   end
 
   def create
-    @qcomment = Qcomment.new(params[:qcomment])
+    question = Question.find(params[:qcomment][:question_id])
+    @qcomment = question.qcomments.create(params[:qcomment])
     if @qcomment.save
       redirect_to qcomment_path(@qcomment)
     else

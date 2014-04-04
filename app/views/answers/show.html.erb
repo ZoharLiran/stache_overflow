@@ -1,2 +1,10 @@
 <h1>Answer <%= @answer.id %></h1>
 <%= @answer.content %>
+
+<h4>Comments:</h4>
+    <ol>
+    <% @answer.acomments.each do |acom| %>
+      <li><%= link_to acom.content, acomment_path(acom) %></li>
+    <% end %>
+    </ol>
+  <h4><%= link_to 'add comment to answer', new_acomment_path(answer_id: @answer.id ) %></h4>

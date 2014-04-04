@@ -113,8 +113,7 @@ a:hover {
 .stacked label,
 .stacked textarea {
     display: block;
-    margin: 0.35em 0;
-    width: 70%;
+    width: 40%;
 }
 
 .ki-button {

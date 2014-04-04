@@ -1,0 +1,7 @@
+  <%= form_for @qcomment, html: {class: 'ki-form' } do |f| %>
+      <%= f.label :content, 'Question:' %>
+      <%= f.text_field :content %>
+      <%= f.hidden_field :question_id, value: params[:question_id] %>
+      <%= f.submit 'Save', class: 'ki-button' %>
+  <% end %>
+
