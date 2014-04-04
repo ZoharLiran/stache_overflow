@@ -11,34 +11,30 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140404040228) do
+ActiveRecord::Schema.define(version: 20140404032647) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "acomments", force: true do |t|
-    t.text     "content"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.integer  "answer_id"
-  end
-
   create_table "answers", force: true do |t|
     t.text     "content"
+    t.integer  "question_id"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "question_id"
   end
 
-  create_table "qcomments", force: true do |t|
+  create_table "comments", force: true do |t|
     t.text     "content"
-    t.integer  "question_id"
+    t.integer  "commentable_id"
+    t.string   "commentable_type"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   create_table "questions", force: true do |t|
-    t.string "content"
+    t.string   "content"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "users", force: true do |t|
@@ -46,7 +42,6 @@ ActiveRecord::Schema.define(version: 20140404040228) do
     t.string   "email"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "password_digest"
   end
 
 end
