@@ -1,2 +1,14 @@
 <h1>Answers#edit</h1>
-<p>Find me in app/views/answers/edit.html.erb</p>
+
+<h1>Edit answer</h1>
+<ul>
+  <%= form_for @answer do |f| %>
+    <li>
+      <%= f.label :content %>
+      <%= f.text_field :content %>
+    </li>
+    <li>
+      <%= f.submit %>
+    </li>
+  <% end %>
+</ul>
