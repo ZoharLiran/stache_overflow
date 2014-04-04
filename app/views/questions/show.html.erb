@@ -1,5 +1,10 @@
 <h1><%= @question.content %></h1>
 <ul>
+  <% @question.qcomments.each do |qs| %>
+    <li><%= qs.content %></li>
+  <% end %>
+</ul>
+<ul>
 <% @question.answers.each do |ans| %>
   <li><%= ans.content %></li>
   <ol>

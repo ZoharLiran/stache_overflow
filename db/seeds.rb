@@ -13,10 +13,12 @@ seeds =
 
 seeds.each do |s|
   Question.create(content: s)
+end
 
 6.times do
   q = Question.create(content: "#{Faker::Lorem.sentence}?")
   4.times do
+    q.qcomments.create(content: Faker::Company.catch_phrase)
     a = Answer.create(content: "#{Faker::Commerce.product_name}!")
     2.times do
       a.acomments.create(content: Faker::Company.catch_phrase)
