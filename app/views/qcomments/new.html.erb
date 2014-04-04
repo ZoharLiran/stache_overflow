@@ -1,14 +1,2 @@
 <h1>Qcomment#new</h1>
-
-<h1>Create a new qcomment!</h1>
-<ul>
-  <%= form_for @qcomment do |f| %>
-    <li>
-      <%= f.label :content %>
-      <%= f.text_field :content %>
-    </li>
-    <li>
-      <%= f.submit %>
-    </li>
-  <% end %>
-</ul>
+<%= render partial: 'form' %>
