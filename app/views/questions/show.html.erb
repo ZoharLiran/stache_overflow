@@ -1,3 +1,14 @@
 <h1><%= @question.content %></h1>
+<ul>
+<% @question.answers.each do |ans| %>
+  <li><%= ans.content %></li>
+  <ol>
+  <% ans.acomments.each do |acom| %>
+    <li><%= acom.content %></li>
+  <% end %>
+  </ol>
+<% end %>
+</ul>
+
 <%= link_to 'edit', edit_question_path(@question) %>
 <%= link_to 'delete', question_path(@question), :method => :delete %>
