@@ -1,4 +1,4 @@
-seeds =
+Questionseeds =
 ["Robert winston hairy kid at school basil fawlty hairy lipsum sterling albert einstein",
 "frontiersman, frightfully nice sterling hairy kid at school hairy lipsum basil fawlty",
 "robert winston burt reynolds jimi hendrix albert einstein village people frontiersman",
@@ -11,18 +11,23 @@ seeds =
 "despot devilish cad bad guy helllloooo soup strainer hairy lipsum iron tache dis",
 "gentleman glorious facial hair?"]
 
-seeds.each do |s|
-  Question.create(content: s)
-end
+AnswerCommentSeeds =
+["Groomed east european gunslinger basil fawlty",
+ "sportacus fox hunting, groomed old west sheriff",
+  "vincent price east european basil fawlty top gun",
+  "knavish rogue trimmed sportacus elit cunning",
+  "like a fox sweat irrigator, gunslinger fox hunting?",
+  "Borat magnum pi hair trimmer by jingo. Daniel",
+  "plainview old man in pub, Daniel plainview mr ",
+  "frothy-top doctor strange lando calrissian borat"]
 
-6.times do
-  q = Question.create(content: "#{Faker::Lorem.sentence}?")
+Questionseeds.each do |s|
+  question = Question.create(content: s)
   4.times do
-    q.qcomments.create(content: Faker::Company.catch_phrase)
-    a = Answer.create(content: "#{Faker::Commerce.product_name}!")
+    question.qcomments.create(content: AnswerCommentSeeds.sample)
+    answer = question.answers.create(content: AnswerCommentSeeds.sample)
     2.times do
-      a.acomments.create(content: Faker::Company.catch_phrase)
+      answer.acomments.create(content: AnswerCommentSeeds.sample)
     end
-    q.answers << a
   end
 end
