@@ -1,0 +1,14 @@
+<h1>Acomments#edit</h1>
+
+<h1>Edit an acomment</h1>
+<ul>
+  <%= form_for @acomment do |f| %>
+    <li>
+      <%= f.label :content %>
+      <%= f.text_field :content %>
+    </li>
+    <li>
+      <%= f.submit %>
+    </li>
+  <% end %>
+</ul>
