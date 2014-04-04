@@ -12,23 +12,12 @@ class QcommentsController < ApplicationController
   end
 
   def new
-    question = Question.find(params[:question_id])
-    @qcomment = question.qcomments.new
-    puts "*"*80
-    p "Question ID: #{question.id}"
-    p params
-    p params[:question_id]
-    puts "*"*80
+    @qcomment = Qcomment.new
   end
 
   def create
-    # question = Question.find(params[:question_id])
-    @qcomment = Qcomment.new(params[:qcomment])
-    puts "*"*80
-    # p question
-    p params[:question_id]
-    p params
-    puts "*"*80
+    question = Question.find(params[:qcomment][:question_id])
+    @qcomment = question.qcomments.create(params[:qcomment])
     if @qcomment.save
       redirect_to qcomment_path(@qcomment)
     else
