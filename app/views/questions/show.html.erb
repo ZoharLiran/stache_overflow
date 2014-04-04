@@ -1,15 +1,15 @@
 <h1><%= @question.content %></h1>
 <ul>
   <% @question.qcomments.each do |qs| %>
-    <li><%= qs.content %></li>
+    <li><%= link_to qs.content, qcomment_path(qs) %></li>
   <% end %>
 </ul>
 <ul>
 <% @question.answers.each do |ans| %>
-  <li><%= ans.content %></li>
+  <li><%= link_to ans.content, answer_path(ans) %></li>
   <ol>
   <% ans.acomments.each do |acom| %>
-    <li><%= acom.content %></li>
+    <li><%= link_to acom.content, acomment_path(acom) %></li>
   <% end %>
   </ol>
 <% end %>
