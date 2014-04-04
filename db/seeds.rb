@@ -1,4 +1,9 @@
-Questionseeds =
+Question.destroy_all
+Answer.destroy_all
+Qcomment.destroy_all
+Acomment.destroy_all
+
+questionseeds =
 ["Robert winston hairy kid at school basil fawlty hairy lipsum sterling albert einstein",
 "frontiersman, frightfully nice sterling hairy kid at school hairy lipsum basil fawlty",
 "robert winston burt reynolds jimi hendrix albert einstein village people frontiersman",
@@ -11,7 +16,7 @@ Questionseeds =
 "despot devilish cad bad guy helllloooo soup strainer hairy lipsum iron tache dis",
 "gentleman glorious facial hair?"]
 
-AnswerCommentSeeds =
+answerCommentSeeds =
 ["Groomed east european gunslinger basil fawlty",
  "sportacus fox hunting, groomed old west sheriff",
   "vincent price east european basil fawlty top gun",
@@ -21,13 +26,13 @@ AnswerCommentSeeds =
   "plainview old man in pub, Daniel plainview mr ",
   "frothy-top doctor strange lando calrissian borat"]
 
-Questionseeds.each do |s|
+questionseeds.each do |s|
   question = Question.create(content: s)
   4.times do
-    question.qcomments.create(content: AnswerCommentSeeds.sample)
-    answer = question.answers.create(content: AnswerCommentSeeds.sample)
+    question.qcomments.create(content: answerCommentSeeds.sample)
+    answer = question.answers.create(content: answerCommentSeeds.sample)
     2.times do
-      answer.acomments.create(content: AnswerCommentSeeds.sample)
+      answer.acomments.create(content: answerCommentSeeds.sample)
     end
   end
 end
