@@ -6,7 +6,7 @@
   <% @question.qcomments.each do |qs| %>
     <li><%= link_to qs.content, qcomment_path(qs) %></li>
   <% end %>
-  <h4><%= link_to 'add comment to question', new_qcomment_path(@question) %></h4>
+  <h4><%= link_to 'add comment to question', new_qcomment_path(question_id: @question.id ) %></h4>
 </ul>
 <ul>
   <h3>Answers:</h3>
@@ -18,8 +18,8 @@
       <li><%= link_to acom.content, acomment_path(acom) %></li>
     <% end %>
     </ol>
-  <h4><%= link_to 'add comment to answer', new_acomment_path(ans) %></h4>
+  <h4><%= link_to 'add comment to answer', new_acomment_path %></h4>
   <% end %>
-  <h4><%= link_to 'add answer to question', new_answer_path(@question.answers) %></h4>
+  <h4><%= link_to 'add answer to question', new_answer_path %></h4>
 </ul>
 

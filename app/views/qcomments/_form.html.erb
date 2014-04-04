@@ -1,5 +1,6 @@
   <%= form_for @qcomment, html: {class: 'ki-form' } do |f| %>
       <%= f.label :content, 'Question:' %>
       <%= f.text_field :content %>
-      <%= f.submit 'Save', class: 'ki-button'%>
+      <%= f.submit 'Save', question_id: params[:question_id], class: 'ki-button' %>
   <% end %>
+
