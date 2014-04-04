@@ -3,6 +3,7 @@ class AnswersController < ApplicationController
   end
 
   def index
+    @answers = Answer.all
   end
 
   def show
