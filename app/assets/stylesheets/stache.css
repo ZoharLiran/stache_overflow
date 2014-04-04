@@ -1,0 +1,202 @@
+body {
+  font-family: 'Quicksand', sans-serif;
+  color: #34495e;
+}
+
+h1, h1 a {
+  padding-top: 10px;
+  color: #34495e;
+}
+
+
+nav ul {
+  padding-right: 20px;
+  display: inline-block;
+  float: right;
+  margin-top: -40px;
+}
+
+nav li {
+  padding-left: 10px;
+  display: inline;
+  list-style: none;
+  font-size: 1.2em;
+}
+
+ul {
+  padding-left: 0;
+}
+
+li {
+  list-style: none
+}
+
+header {
+  padding: 0 20px;
+  margin-top: -21px;
+  height: 57px;
+}
+
+section {
+  /*padding: 10px;*/
+  margin-top: 20px;
+}
+
+footer {
+  border-top: 1px solid #ccc;
+  padding: 10px 0;
+  margin: 30px;
+  text-align: center;
+}
+
+a {
+  text-decoration: none;
+  color: #2980b9;
+}
+
+a:hover {
+  color: #1abc9c;
+}
+
+#content {
+  width: 1200px;
+  /*margin: 0 50px;*/
+}
+
+/* forms */
+.ki-form input[type="text"],
+.ki-form input[type="password"],
+.ki-form input[type="email"],
+.ki-form input[type="url"],
+.ki-form input[type="date"],
+.ki-form input[type="month"],
+.ki-form input[type="time"],
+.ki-form input[type="datetime"],
+.ki-form input[type="datetime-local"],
+.ki-form input[type="week"],
+.ki-form input[type="number"],
+.ki-form input[type="search"],
+.ki-form input[type="tel"],
+.ki-form input[type="color"],
+.ki-form select,
+.ki-form textarea {
+    padding: 0.5em 0.6em;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-shadow: inset 0 1px 3px #ddd;
+    border-radius: 4px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    width: 70%;
+}
+
+.stacked input[type="text"],
+.stacked input[type="password"],
+.stacked input[type="email"],
+.stacked input[type="url"],
+.stacked input[type="date"],
+.stacked input[type="month"],
+.stacked input[type="time"],
+.stacked input[type="datetime"],
+.stacked input[type="datetime-local"],
+.stacked input[type="week"],
+.stacked input[type="number"],
+.stacked input[type="search"],
+.stacked input[type="tel"],
+.stacked input[type="color"],
+.stacked select,
+.stacked label,
+.stacked textarea {
+    display: block;
+    margin: 0.35em 0;
+    width: 70%;
+}
+
+.ki-button {
+    font-family: inherit;
+    font-size: 100%;
+    *font-size: 90%; /*IE 6/7 - To reduce IE's oversized button text*/
+    *overflow: visible; /*IE 6/7 - Because of IE's overly large left/right padding on buttons */
+    padding: 0.25em 0.5em;
+    color: #444; /* rgba not supported (IE 8) */
+    color: rgba(0, 0, 0, 0.80); /* rgba supported */
+    *color: #444; /* IE 6 & 7 */
+    border: 1px solid #999;  /*IE 6/7/8*/
+    border: none rgba(0, 0, 0, 0);  /*IE9 + everything else*/
+    background-color: #E6E6E6;
+    text-decoration: none;
+    border-radius: 2px;
+    margin: 0.35em 0;
+}
+
+
+
+.ki-button-hover,
+.ki-button:hover,
+.ki-button:focus {
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00000000', endColorstr='#1a000000',GradientType=0);
+    background-image: -webkit-gradient(linear, 0 0, 0 100%, from(transparent), color-stop(40%, rgba(0,0,0, 0.05)), to(rgba(0,0,0, 0.10)));
+    background-image: -webkit-linear-gradient(transparent, rgba(0,0,0, 0.05) 40%, rgba(0,0,0, 0.10));
+    background-image: -moz-linear-gradient(top, rgba(0,0,0, 0.05) 0%, rgba(0,0,0, 0.10));
+    background-image: -o-linear-gradient(transparent, rgba(0,0,0, 0.05) 40%, rgba(0,0,0, 0.10));
+    background-image: linear-gradient(transparent, rgba(0,0,0, 0.05) 40%, rgba(0,0,0, 0.10));
+}
+.ki-button:focus {
+    outline: 0;
+}
+.ki-button-active,
+.ki-button:active {
+    box-shadow: 0 0 0 1px rgba(0,0,0, 0.15) inset, 0 0 6px rgba(0,0,0, 0.20) inset;
+}
+
+.ki-button[disabled],
+.ki-button-disabled,
+.ki-button-disabled:hover,
+.ki-button-disabled:focus,
+.ki-button-disabled:active {
+    border: none;
+    background-image: none;
+    filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
+    filter: alpha(opacity=40);
+    -khtml-opacity: 0.40;
+    -moz-opacity: 0.40;
+    opacity: 0.40;
+    cursor: not-allowed;
+    box-shadow: none;
+}
+
+.ki-button-hidden {
+    display: none;
+}
+
+/* Firefox: Get rid of the inner focus border */
+.ki-button::-moz-focus-inner{
+    padding: 0;
+    border: 0;
+}
+
+.ki-button-primary,
+.ki-button-selected,
+a.ki-button-primary,
+a.ki-button-selected {
+    background-color: #2980b9;
+    color: #fff;
+}
+
+.post {
+  display: inline-block;
+  height: 250px;
+  width: 325px;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+  margin: 15px;
+}
+
+.post img {
+    display:block;
+    margin:auto;
+}

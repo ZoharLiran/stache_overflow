@@ -1,14 +1,2 @@
 <h1>Answers#edit</h1>
-
-<h1>Edit answer</h1>
-<ul>
-  <%= form_for @answer do |f| %>
-    <li>
-      <%= f.label :content %>
-      <%= f.text_field :content %>
-    </li>
-    <li>
-      <%= f.submit %>
-    </li>
-  <% end %>
-</ul>
+<%= render partial: 'form' %>
