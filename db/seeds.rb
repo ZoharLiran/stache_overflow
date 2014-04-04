@@ -27,7 +27,7 @@ answerCommentSeeds =
   "frothy-top doctor strange lando calrissian borat"]
 
 questionseeds.each do |s|
-  question = Question.create(content: s)
+  question = Question.create(content: s, best_answer_id: 1)
   4.times do
     question.qcomments.create(content: answerCommentSeeds.sample)
     answer = question.answers.create(content: answerCommentSeeds.sample)
