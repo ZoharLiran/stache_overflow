@@ -1,0 +1,8 @@
+<h1>Questions Index</h1>
+<ul>
+<% @questions.each do |q| %>
+  <li><%= link_to q.content, question_path(q) %></li>
+<% end %>
+</ul>
+
+<%= link_to 'new question', new_question_path %>

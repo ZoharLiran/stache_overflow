@@ -22,4 +22,8 @@ ActiveRecord::Schema.define(version: 20140403234741) do
     t.datetime "updated_at"
   end
 
+  create_table "questions", force: true do |t|
+    t.string "content"
+  end
+
 end
