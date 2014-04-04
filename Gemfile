@@ -19,6 +19,8 @@ gem 'jbuilder', '~> 1.2'
 #included so we can use attr_accessible in model
 gem 'protected_attributes'
 
+gem 'bcrypt-ruby'
+
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
   gem 'sdoc', require: false

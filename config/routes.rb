@@ -4,4 +4,5 @@ StacheOverflow::Application.routes.draw do
   resources :answers
   resources :qcomments
   resources :acomments
+  resources :users
 end
