@@ -26,3 +26,8 @@ end
     q.answers << a
   end
 end
+
+User.create(name: "Eric", email: "eric@eric.com", password: "123456", password_confirmation: "123456")
+User.create(name: "Matthew", email: "matthew@matthew.com", password: "123456", password_confirmation: "123456")
+User.create(name: "Drew", email: "drew@drew.com", password: "123456", password_confirmation: "123456")
+User.create(name: "Katherine", email: "katherine@katherine.com", password: "123456", password_confirmation: "123456")
