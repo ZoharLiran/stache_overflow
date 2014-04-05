@@ -5,5 +5,5 @@ StacheOverflow::Application.routes.draw do
   resources :comments
   resources :users
 
-  match '/auth/:twitter/callback', to: 'sessions#create'
+  get '/auth/:twitter/callback', to: 'sessions#create'
 end
