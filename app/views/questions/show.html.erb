@@ -3,10 +3,10 @@
 <%= link_to 'delete question', question_path(@question), :method => :delete %>
 <ul>
   <h3>Question Comments:</h3>
-  <% @question.qcomments.each do |qs| %>
-    <li><%= qs.content %></li>
+  <% @question.comments.each do |comment| %>
+    <li><%= comment.content %></li>
   <% end %>
-  <h4><%= link_to 'add comment to question', new_qcomment_path(question_id: @question.id ) %></h4>
+  <h4><%= link_to 'add comment to question', new_comment_path(question_id: @question.id ) %></h4>
 </ul>
 <ul>
   <h3>Answers:</h3>
@@ -16,4 +16,3 @@
   <% end %>
   <h4><%= link_to 'add answer to question', new_answer_path(question_id: @question.id ) %></h4>
 </ul>
-
