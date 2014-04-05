@@ -5,16 +5,22 @@ class CommentsController < ApplicationController
   end
 
   def create
-    question = Question.find(params[:comment][:question_id])
-    @comment = question.comments.create(params[:comment])
-    p params
-    p "-"*50
-    p @comment
-    p @comment.id
-    if @comment.save
-      redirect_to question
-    else
-      render :new
+    if params[:comment][:question_id] != ""
+      question = Question.find(params[:comment][:question_id])
+      @comment = question.comments.create(params[:comment])
+      if @comment.save
+        redirect_to question
+      else
+        render :new
+      end
+    elsif params[:comment][:answer_id] != ""
+      answer = Answer.find(params[:comment][:answer_id])
+      @comment = answer.comments.create(params[:comment])
+      if @comment.save
+        redirect_to answer
+      else
+        render :new
+      end
     end
   end
 

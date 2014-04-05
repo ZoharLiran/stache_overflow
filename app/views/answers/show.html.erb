@@ -1,5 +1,6 @@
-<h1>Answer <%= @answer.id %></h1>
-<%= @answer.content %>
+<h1>Answer:</h1>
+<br>
+<%= link_to @answer.content, Question.find(@answer.question_id) %>
 
 <h4>Comments:</h4>
     <ol>
