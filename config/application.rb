@@ -9,6 +9,7 @@ require "faker"
 require 'omniauth'
 require 'omniauth-twitter'
 require 'oauth'
+require 'awesome_print'
 
 # require "rails/test_unit/railtie"
 

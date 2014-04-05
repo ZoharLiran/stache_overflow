@@ -1,7 +1,8 @@
 class SessionsController < ApplicationController
   def create
     # render text: request.env['rack.auth'].inspect
-    auth = request.env['rack.auth']
+    auth = request.env['omniauth.auth']
+
     unless @auth = Authorization.find_from_hash(auth)
       # Create a new user or add an auth to existing user, depending on
       # whether there is already a user signed in.
@@ -10,6 +11,7 @@ class SessionsController < ApplicationController
     #Log the authorizing user in.
     self.current_user = @auth.user
 
-    render text: "Welcome, #{current_user.name}."
+    redirect_to root_path
+    # render text: "Welcome, #{current_user.name}."
   end
 end
