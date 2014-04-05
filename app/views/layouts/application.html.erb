@@ -13,7 +13,7 @@
       <ul>
         <li>
           <% if @username %>
-            <p>User: <%= @username %></p>
+            <p><%= link_to "Logout", '/logout' %> <%= @username %> </p>
           <% else %>
             <%= link_to "Login With Twitter", '/auth/twitter' %>
           <% end %>

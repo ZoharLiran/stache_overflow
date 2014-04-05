@@ -15,4 +15,9 @@ class SessionsController < ApplicationController
     redirect_to root_path
     # render text: "Welcome, #{current_user.name}."
   end
+
+  def logout
+    session.clear
+    redirect_to root_path
+  end
 end
