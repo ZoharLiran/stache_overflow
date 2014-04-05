@@ -5,4 +5,6 @@ StacheOverflow::Application.routes.draw do
   resources :qcomments
   resources :acomments
   resources :users
+
+  match '/auth/:twitter/callback', to: 'sessions#create'
 end
