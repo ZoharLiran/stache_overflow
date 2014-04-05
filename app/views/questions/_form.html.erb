@@ -1,4 +1,4 @@
-  <%= form_for Question.new, html: {class: 'ki-form' } do |f| %>
+  <%= form_for @question, html: {class: 'ki-form' } do |f| %>
       <%= f.label :content, 'Question:' %>
       <%= f.text_field :content %>
       <%= f.submit 'Save', class: 'ki-button'%>
