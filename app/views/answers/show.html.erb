@@ -1,10 +1,11 @@
-<h1>Answer <%= @answer.id %></h1>
+<h1>Question: <%= link_to Question.find(@answer.question_id).content, Question.find(@answer.question_id) %></h1>
+<br>
 <%= @answer.content %>
 
 <h4>Comments:</h4>
     <ol>
-    <% @answer.acomments.each do |acom| %>
-      <li><%= link_to acom.content, acomment_path(acom) %></li>
+    <% @answer.comments.each do |comment| %>
+      <li><%= link_to comment.content, comment_path(comment) %></li>
     <% end %>
     </ol>
-  <h4><%= link_to 'add comment to answer', new_acomment_path(answer_id: @answer.id ) %></h4>
+  <h4><%= link_to 'add comment to answer', new_comment_path(answer_id: @answer.id ) %></h4>

@@ -8,9 +8,9 @@ class QuestionsController < ApplicationController
   end
 
   def create
-    question = Question.new question_params
+    question = Question.new params[:question]
     if question.save
-      redirect_to question_path question
+      redirect_to question
     else
       render :new
     end
