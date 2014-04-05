@@ -19,7 +19,7 @@ class AnswersController < ApplicationController
     question = Question.find(params[:answer][:question_id])
     @answer = question.answers.create(params[:answer])
     if @answer.save
-      redirect_to answer_path(@answer)
+      redirect_to question
     else
       render :new
     end
