@@ -6,4 +6,6 @@ StacheOverflow::Application.routes.draw do
   resources :answers
   resources :comments
   resources :users
+
+  get '/auth/:twitter/callback', to: 'sessions#create'
 end

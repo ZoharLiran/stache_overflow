@@ -21,6 +21,11 @@ gem 'protected_attributes'
 
 gem 'bcrypt-ruby'
 
+gem 'omniauth'
+gem 'omniauth-twitter'
+gem 'oauth'
+gem 'awesome_print'
+
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
   gem 'sdoc', require: false
