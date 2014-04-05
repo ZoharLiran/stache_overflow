@@ -1,7 +1,6 @@
 Question.destroy_all
 Answer.destroy_all
-Qcomment.destroy_all
-Acomment.destroy_all
+Comment.destroy_all
 
 questionseeds =
 ["Robert winston hairy kid at school basil fawlty hairy lipsum sterling albert einstein",
@@ -29,10 +28,10 @@ answerCommentSeeds =
 questionseeds.each do |s|
   question = Question.create(content: s, best_answer_id: 1)
   4.times do
-    question.qcomments.create(content: answerCommentSeeds.sample)
+    question.comments.create(content: answerCommentSeeds.sample)
     answer = question.answers.create(content: answerCommentSeeds.sample)
     2.times do
-      answer.acomments.create(content: answerCommentSeeds.sample)
+      answer.comments.create(content: answerCommentSeeds.sample)
     end
   end
 end

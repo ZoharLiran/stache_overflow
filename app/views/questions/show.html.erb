@@ -13,8 +13,11 @@
   <h3>Answers:</h3>
   <% @question.answers.each do |ans| %>
     <li>
-
+      <% if @question.best_answer_id == ans.id %>
+      BEST ANSWER
+      <% else %>
       <%= link_to 'Mark this answer as the best', question_best_answer_path(@question, answer_id: ans.id ) %>
+      <% end %>
       <%= link_to ans.content, answer_path(ans) %></li>
 
   <% end %>

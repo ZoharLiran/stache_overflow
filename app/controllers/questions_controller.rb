@@ -41,7 +41,7 @@ class QuestionsController < ApplicationController
 
   def best_answer
     question = Question.find params[:question_id]
-    question.best_answer_id = params[:answer_id]
+    question.update_attribute(:best_answer_id, params[:answer_id])
     redirect_to question_path question
   end
 
