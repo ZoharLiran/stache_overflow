@@ -2,7 +2,7 @@ class QuestionsController < ApplicationController
   include UsersHelper
 
   def index
-    @questions = Question.all    
+    @questions = Question.all.reverse  
   end
 
   def new
@@ -55,6 +55,6 @@ class QuestionsController < ApplicationController
 
   private
   def question_params
-    params.require(:question).permit(:content, :best_answer_id)
+    params.require(:question).permit(:title, :content, :best_answer_id)
   end
 end
