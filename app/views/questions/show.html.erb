@@ -13,13 +13,17 @@
   <h3>Answers:</h3>
   <% @question.answers.each do |ans| %>
     <li>
+      <div class="col-mid-1">
       <% if @question.best_answer_id == ans.id %>
-      BEST ANSWER
+      <span class="glyphicon glyphicon-ok"></span><span class="img-replace">Best answer!</span>
       <% else %>
       <%= link_to 'Mark this answer as the best', question_best_answer_path(@question, answer_id: ans.id ) %>
       <% end %>
-      <%= link_to ans.content, question_answer_path(@question, ans) %></li>
-
+    </div>
+    <div class="col-mid-8">
+      <%= link_to ans.content, question_answer_path(@question, ans) %>
+    </div>
+    </li>
   <% end %>
   <h4><%= link_to 'add answer to question', new_question_answer_path(question_id: @question.id ) %></h4>
 </ul>
