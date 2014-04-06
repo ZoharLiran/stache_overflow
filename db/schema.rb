@@ -42,6 +42,7 @@ ActiveRecord::Schema.define(version: 20140405003024) do
   end
 
   create_table "questions", force: true do |t|
+    t.string   "title"
     t.string   "content"
     t.integer  "vote_count"
     t.datetime "created_at"
