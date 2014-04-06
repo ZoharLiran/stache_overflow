@@ -25,6 +25,7 @@ gem 'omniauth'
 gem 'omniauth-twitter'
 gem 'oauth'
 gem 'awesome_print'
+gem 'twilio-ruby'
 
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.

@@ -1,6 +1,6 @@
 <h1><%= @question.content %></h1>
 <br>
-<% if @username && loggedusername == @username %>
+<% if @username && logged_username == @username %>
   <%= link_to 'edit question', edit_question_path(@question), class: "btn btn-info", role: "button"%>
   <%= link_to 'delete question', question_path(@question), class: "btn btn-info", role: "button", :method => :delete %>
 <% end %>

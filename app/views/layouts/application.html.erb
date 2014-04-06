@@ -26,9 +26,10 @@
               <input type="password" placeholder="Password" class="form-control">
             </div> -->
             <% if signed_in? %>
-              <%= link_to "Logout", '/logout', class: "btn btn-success", role: "button" %> <br><%= loggedusername %>
+              <%= link_to "Logout", '/logout', class: "btn btn-success", role: "button" %> 
+              <%= link_to "Profile", user_path(logged_user), class: "btn btn-success", role: "button" %> 
             <% else %>
-              <%= link_to "Login With Twitter", '/auth/twitter', class: "btn btn-success", role: "button" %>
+              <%= link_to "Sign In", '/auth/twitter', class: "btn btn-success", role: "button" %> 
             <% end %>
           </form>
         </div><!--/.navbar-collapse -->
@@ -40,7 +41,12 @@
     <div class="container">
       <h2>Welcome!</h2>
       <p>Stache Overflow is a system that was designed to answer all your questions. Enjoy!</p>
-      <p><a class="btn btn-primary btn-lg" role="button">Learn more &raquo;</a></p>
+      <% if signed_in? %>
+        <%= link_to "Ask a question &raquo;".html_safe, new_question_path, class: "btn btn-primary btn-lg", role: "button" %>
+      <% else %>
+        <%= link_to "Login to ask a question &raquo;".html_safe, '/auth/twitter', class: "btn btn-primary btn-lg", role: "button" %>
+        <!-- <p><a class="btn btn-primary btn-lg" role="button">Log in to ask a question &raquo;</a></p> -->
+      <% end %>
     </div>
   </div>
 
