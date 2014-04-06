@@ -62,12 +62,12 @@ a:hover {
   color: #1abc9c;
 }
 
-.img-replace {
-  display: inline-block;
-  height: 1.2em;
-  overflow: hidden;
-  text-indent: 100%;
-  white-space: nowrap;
+.fa-check { color: #5cb85c; }
+
+.sm { font-size: 80%; }
+
+#answers li, #comments li {
+  margin-bottom: 2em;
 }
 
 #content {
