@@ -5,10 +5,10 @@ env_config = YAML.load_file(APP_ROOT.join('twitter.yml'))
 ENV['TWITTER_KEY'] = env_config['TWITTER_KEY']
 ENV['TWITTER_SECRET'] = env_config['TWITTER_SECRET']
 
-env_config = YAML.load_file(APP_ROOT.join('twitter.yml'))
+env_config = YAML.load_file(APP_ROOT.join('plivo.yml'))
 
-ENV['TWILIO_ACCOUNT_SID'] = env_config['TWILIO_ACCOUNT_SID']
-ENV['TWILIO_AUTH_TOKEN'] = env_config['TWILIO_AUTH_TOKEN']
+ENV['PLIVO_AUTH_ID'] = env_config['PLIVO_AUTH_ID']
+ENV['PLIVO_AUTH_TOKEN'] = env_config['PLIVO_AUTH_TOKEN']
 
 
 
