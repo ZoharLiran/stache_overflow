@@ -18,7 +18,7 @@ class QuestionsController < ApplicationController
 
   def show
     @question = Question.find params[:id]
-    @username = @question.user.name
+    @username = @question.user.name if @question.user
   end
 
   def edit

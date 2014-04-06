@@ -46,8 +46,8 @@ ActiveRecord::Schema.define(version: 20140405003024) do
   create_table "questions", force: true do |t|
     t.string   "title"
     t.string   "content"
-    t.integer  "vote_count"
     t.integer  "user_id"
+    t.integer  "vote_count",     default: 0
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "best_answer_id"
