@@ -2,7 +2,7 @@ class QuestionsController < ApplicationController
   include UsersHelper
 
   def index
-    @questions = Question.all.reverse  
+    @questions = Question.all.reverse
   end
 
   def new
@@ -52,6 +52,19 @@ class QuestionsController < ApplicationController
     question.update_attribute(:best_answer_id, params[:answer_id])
     redirect_to question_path question
   end
+
+  def increase_vote
+    question = Question.find params[:id] # ??? is this right? how to access id from ajax
+    question.vote_count += 1
+    question.save
+  end
+
+  def decrease_vote
+    question = Question.find params[:id] # ??? is this right? how to access id from ajax
+    question.vote_count -= 1
+    question.save
+  end
+
 
   private
   def question_params
