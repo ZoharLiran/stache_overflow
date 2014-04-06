@@ -1,10 +1,11 @@
 class User < ActiveRecord::Base
-  attr_accessible :name, :email, :password, :password_confirmation
-  has_secure_password
-  validates :name, presence: true
-  EMAIL_REGEX = /\A([\w\.%\+\-]+)@([\w\-]+\.)+([\w]{2,})\z/i
-  validates :email, presence:   true,
-                    format:     { with: EMAIL_REGEX },
-                    uniqueness: { case_sensitive: false }
-  validates :password, presence: true, length: { minimum: 6 }
+  has_many :authorizations
+  attr_accessible :name, :email, :phone
+  has_many :questions
+  has_many :answers
+  has_many :comments
+
+  def self.create_from_hash!(hash)
+    create(name: hash['screen_name'])
+  end
 end

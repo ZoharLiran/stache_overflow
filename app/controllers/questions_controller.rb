@@ -1,6 +1,8 @@
 class QuestionsController < ApplicationController
+  include UsersHelper
+
   def index
-    @questions = Question.all
+    @questions = Question.all    
   end
 
   def new
@@ -8,9 +10,14 @@ class QuestionsController < ApplicationController
   end
 
   def create
-    question = Question.new params[:question]
+    if signed_in?
+      question = logged_user.questions.new question_params
+    else
+      question = Question.new question_params
+    end
+
     if question.save
-      redirect_to question
+      redirect_to question_path question
     else
       render :new
     end
@@ -18,6 +25,7 @@ class QuestionsController < ApplicationController
 
   def show
     @question = Question.find params[:id]
+    @username = @question.user.name if @question.user
   end
 
   def edit
@@ -37,6 +45,12 @@ class QuestionsController < ApplicationController
     question  = Question.find params[:id]
     question.destroy
     redirect_to root_path
+  end
+
+  def best_answer
+    question = Question.find params[:question_id]
+    question.update_attribute(:best_answer_id, params[:answer_id])
+    redirect_to question_path question
   end
 
   private

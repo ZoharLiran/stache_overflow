@@ -1,6 +1,5 @@
 class CommentsController < ApplicationController
   def new
-    # @comments = Comment.all
     @comment = Comment.new
   end
 
@@ -15,9 +14,11 @@ class CommentsController < ApplicationController
       end
     elsif params[:comment][:answer_id] != ""
       answer = Answer.find(params[:comment][:answer_id])
-      @comment = answer.comments.create(params[:comment])
+      @comment = Comment.new(content: params[:comment][:content])
+      answer.comments << @comment
       if @comment.save
-        redirect_to answer
+        question = Question.find(answer)
+        redirect_to [question, answer]
       else
         render :new
       end

@@ -11,14 +11,24 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140404205932) do
+ActiveRecord::Schema.define(version: 20140405003024) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "answers", force: true do |t|
     t.text     "content"
+    t.integer  "vote_count"
     t.integer  "question_id"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "authorizations", force: true do |t|
+    t.string   "provider"
+    t.string   "uid"
+    t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -27,12 +37,17 @@ ActiveRecord::Schema.define(version: 20140404205932) do
     t.text     "content"
     t.integer  "commentable_id"
     t.string   "commentable_type"
+    t.integer  "vote_count"
+    t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   create_table "questions", force: true do |t|
+    t.string   "title"
     t.string   "content"
+    t.integer  "user_id"
+    t.integer  "vote_count",     default: 0
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "best_answer_id"
@@ -41,6 +56,7 @@ ActiveRecord::Schema.define(version: 20140404205932) do
   create_table "users", force: true do |t|
     t.string   "name"
     t.string   "email"
+    t.string   "phone"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

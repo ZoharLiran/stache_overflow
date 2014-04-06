@@ -1,7 +1,30 @@
-<h1>Questions Index</h1><br>
-<%= link_to 'new question', new_question_path %>
-<ul>
-<% @questions.each do |q| %>
-  <li><%= link_to q.content, question_path(q) %></li><br>
-<% end %>
-</ul>
+<div class="container">
+  <!-- Example row of columns -->
+  <% for i in 0..@questions.length do %>
+    <div class="row">
+    <% for j in i..(i+2) do %>
+      <% break if j >= @questions.length %>
+      <div class="col-md-4">
+        <h2><%= @questions[j].title %></h2>
+        <%= link_to @questions[j].content, question_path(@questions[j]) %>
+        <br>
+        <a data-id="<%= j %>" class="upvote-button" href="#" role="button"><i class="fa fa-chevron-up"></i></a> <%= @questions[j].vote_count %> <a class="downvote" href="#" role="button"><i class="fa fa-chevron-down"></i></a>
+      </div>
+    <% end %>
+    <% i = j + 1 %>
+    </div>
+    <% break if i >= @questions.length %>
+  <% end %>
+
+
+  <hr>
+
+  <%= link_to 'new question', new_question_path %>
+  <footer>
+    <p>&copy; Stache Inc. 2014</p>
+  </footer>
+</div> <!-- /container -->
+
+
+
+
