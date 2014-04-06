@@ -1,4 +1,6 @@
 class QuestionsController < ApplicationController
+  include UsersHelper
+
   def index
     @questions = Question.all    
   end
@@ -8,7 +10,12 @@ class QuestionsController < ApplicationController
   end
 
   def create
-    question = Question.new question_params
+    if signed_in?
+      question = logged_user.questions.new question_params
+    else
+      question = Question.new question_params
+    end
+
     if question.save
       redirect_to question_path question
     else

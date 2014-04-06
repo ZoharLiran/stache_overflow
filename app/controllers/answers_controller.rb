@@ -1,4 +1,6 @@
 class AnswersController < ApplicationController
+  include UsersHelper
+
   def index
     @answers = Answer.all
   end
@@ -21,6 +23,7 @@ class AnswersController < ApplicationController
     question = Question.find(params[:answer][:question_id])
     @answer = question.answers.create(params[:answer])
     if @answer.save
+      phone_communication(question.user)
       redirect_to question
     else
       render :new

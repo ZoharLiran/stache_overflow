@@ -25,6 +25,12 @@ class UsersController < ApplicationController
   end
 
   def update
+    if User.find(params[:id]).update_attributes(params[:user])
+      redirect_to user_path
+    else
+      render :edit
+    end
+
   end
 
   def destroy

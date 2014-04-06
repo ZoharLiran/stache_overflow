@@ -16,3 +16,4 @@
 /tmp
 
 config/twitter.yml
+config/twilio.yml
