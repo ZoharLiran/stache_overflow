@@ -1,6 +1,7 @@
 <div class="container">
   <!-- Example row of columns -->
-  <% for i in 0..@questions.length do %>
+  <% i = 0 %>
+  <% while i < @questions.length do %>
     <div class="row">
     <% for j in i..(i+2) do %>
       <% break if j >= @questions.length %>
