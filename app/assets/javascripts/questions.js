@@ -3,6 +3,7 @@ $(document).ready(function() {
 
 // below is draft
   $(".upvote-button").on("click", function() {
+    event.preventDefault();
     var id = $(this).data('id')
 
     // mason will test the 3 lines below
@@ -23,6 +24,7 @@ $(document).ready(function() {
   });
 
   $(".upvote-button").on("click", function() {
+    event.preventDefault();
     var id = $(this).data('id')
 
     var voteString = $( ".v#{id}").text()

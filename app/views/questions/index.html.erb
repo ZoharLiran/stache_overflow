@@ -6,10 +6,16 @@
     <% for j in i..(i+2) do %>
       <% break if j >= @questions.length %>
       <div class="col-md-4">
-        <h2><%= @questions[j].title %></h2>
-        <%= link_to @questions[j].content, question_path(@questions[j]) %>
+        <h2><%= link_to @questions[j].title, question_path(@questions[j]) %></h2>
+        <%= @questions[j].content %>
         <br>
-        <a data-id="<%= j %>" class="upvote-button" href="" role="button"><i class="fa fa-chevron-up"></i></a> <span class="v<%= j %>"><%= @questions[j].vote_count %></span> <a class="downvote-button" href="#" role="button"><i class="fa fa-chevron-down"></i></a>
+        <a data-id="<%= @questions[j].id %>" class="upvote-button" href="" role="button">
+          <i class="fa fa-chevron-up"></i>
+        </a> 
+        <span class="v<%= @questions[j].id %>"><%= @questions[j].vote_count %></span> 
+        <a class="downvote-button" href="#" role="button">
+          <i class="fa fa-chevron-down"></i>
+        </a>
       </div>
     <% end %>
     <% i = j + 1 %>
