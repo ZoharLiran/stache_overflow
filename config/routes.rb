@@ -1,7 +1,9 @@
 StacheOverflow::Application.routes.draw do
   root to: 'questions#index'
-  resources :questions
-  resources :answers
+  resources :questions do
+    get 'best_answer/:answer_id', to: 'questions#best_answer', as: :best_answer
+    resources :answers
+  end
   resources :comments
   resources :users
 

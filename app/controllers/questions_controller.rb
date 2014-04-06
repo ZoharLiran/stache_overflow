@@ -11,9 +11,9 @@ class QuestionsController < ApplicationController
   end
 
   def create
-    question = Question.new params[:question]
+    question = Question.new question_params
     if question.save
-      redirect_to question
+      redirect_to question_path question
     else
       render :new
     end
@@ -40,6 +40,12 @@ class QuestionsController < ApplicationController
     question  = Question.find params[:id]
     question.destroy
     redirect_to root_path
+  end
+
+  def best_answer
+    question = Question.find params[:question_id]
+    question.update_attribute(:best_answer_id, params[:answer_id])
+    redirect_to question_path question
   end
 
   private
