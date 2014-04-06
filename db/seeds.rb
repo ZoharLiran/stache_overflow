@@ -1,9 +1,10 @@
 Question.destroy_all
 Answer.destroy_all
 Comment.destroy_all
+u = User.first
 
 34.times do |i|
-  q = Question.create(title: "Question #{i}", content:Faker::Lorem.sentence(3) + " ?")
+  q = u.questions.create(title: "Question #{i}", content:Faker::Lorem.sentence(3) + " ?")
   5.times do |j|
     q.answers.create(content: Faker::Lorem.sentence(9))
   end

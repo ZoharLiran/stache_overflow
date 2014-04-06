@@ -25,10 +25,10 @@
             <div class="form-group">
               <input type="password" placeholder="Password" class="form-control">
             </div> -->
-            <% if @username %>
-              <button type="submit" class="btn btn-success" id="login_button"><%= link_to "Logout", '/logout' %> <br><%= @username %></button>
+            <% if signed_in? %>
+              <%= link_to "Logout", '/logout', class: "btn btn-success", role: "button" %> <br><%= loggedusername %>
             <% else %>
-              <button type="submit" class="btn btn-success" id="login_button"><%= link_to "Login With Twitter", '/auth/twitter' %></button>
+              <%= link_to "Login With Twitter", '/auth/twitter', class: "btn btn-success", role: "button" %>
             <% end %>
           </form>
         </div><!--/.navbar-collapse -->
@@ -43,7 +43,9 @@
       <p><a class="btn btn-primary btn-lg" role="button">Learn more &raquo;</a></p>
     </div>
   </div>
-<%= yield %>
 
+  <div class="container">
+    <%= yield %>
+  </div>
 </body>
 </html>
