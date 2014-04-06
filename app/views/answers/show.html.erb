@@ -1,5 +1,11 @@
 <h1>Question: <%= link_to Question.find(@answer.question_id).content, Question.find(@answer.question_id) %></h1>
 <br>
+  <% if @question.best_answer_id == @answer.id %>
+  <div class="col-mid-1">    
+    <span class="glyphicon glyphicon-ok"></span><span class="img-replace">Best answer!</span>
+  </div>
+  <% end %>
+
 <%= @answer.content %>
 
 <h4>Comments:</h4>
