@@ -1,9 +1,6 @@
 class QuestionsController < ApplicationController
   def index
-    @questions = Question.all
-    if signed_in?
-      @username = User.find_by_id(session[:user_id]).name
-    end
+    @questions = Question.all    
   end
 
   def new
@@ -21,6 +18,7 @@ class QuestionsController < ApplicationController
 
   def show
     @question = Question.find params[:id]
+    @username = @question.user.name
   end
 
   def edit

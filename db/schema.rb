@@ -18,8 +18,9 @@ ActiveRecord::Schema.define(version: 20140405003024) do
 
   create_table "answers", force: true do |t|
     t.text     "content"
-    t.integer  "question_id"
     t.integer  "vote_count"
+    t.integer  "question_id"
+    t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -37,6 +38,7 @@ ActiveRecord::Schema.define(version: 20140405003024) do
     t.integer  "commentable_id"
     t.string   "commentable_type"
     t.integer  "vote_count"
+    t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -45,6 +47,7 @@ ActiveRecord::Schema.define(version: 20140405003024) do
     t.string   "title"
     t.string   "content"
     t.integer  "vote_count"
+    t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "best_answer_id"
