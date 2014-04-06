@@ -13,8 +13,8 @@ $(document).ready(function() {
     console.log(id)
 
     $.ajax({
-      url: // need URL  /question/increase_vote
-      type: GET
+      url: "/question/" + id
+      type: PUT
       data: id
       // I am assuming dataType: is not needed
     }).done (function() {

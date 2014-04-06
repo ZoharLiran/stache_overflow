@@ -9,4 +9,5 @@ StacheOverflow::Application.routes.draw do
 
   get '/auth/:twitter/callback', to: 'sessions#create'
   get '/logout', to: 'sessions#logout'
+
 end
