@@ -1,6 +1,3 @@
-// All this logic will automatically be available in application.js.
-
-// modeled on Steve's ajax demo code
 
 $(document).ready(function() {
 
