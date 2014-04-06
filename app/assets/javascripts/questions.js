@@ -13,16 +13,13 @@ $(document).ready(function() {
     console.log(id)
 
     $.ajax({
-      url: "/question/" + id
+      url: "/question/upvote/" + id
       type: PUT
       data: id
       // I am assuming dataType: is not needed
     }).done (function() {
     $(".v#{id}").html( newVoteString );
     });
-
-    // update the vote number here
-    // example $("body").append(data.author.name);
   });
 
   $(".upvote-button").on("click", function() {
@@ -34,15 +31,13 @@ $(document).ready(function() {
 
     console.log(id)
     $.ajax({
-      url: // need URL  /question/decrease_vote
-      type: GET
+      url: "/question/downvote/" + id
+      type: PUT
       data: id
     }).done (function() {
     $(".v#{id}").html( newVoteString );
     });
 
-    // update the vote number here
-    // example $("body").append(data.author.name);
   });
 
 
