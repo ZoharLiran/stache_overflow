@@ -9,4 +9,8 @@ StacheOverflow::Application.routes.draw do
 
   get '/auth/:twitter/callback', to: 'sessions#create'
   get '/logout', to: 'sessions#logout'
+
+  put '/questions/upvote/:id', to: "questions#increase_vote"
+  put '/questions/downvote/:id', to: "questions#decrease_vote"
+
 end
