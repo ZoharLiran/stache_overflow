@@ -2,15 +2,15 @@
 <h2><%= @question.content %></h2>
 <br>
 <% if @username && logged_username == @username %>
-  <%= link_to 'edit question', edit_question_path(@question), class: "btn btn-info", role: "button"%>
-  <%= link_to 'delete question', question_path(@question), class: "btn btn-info", role: "button", :method => :delete %>
+  <%= link_to "Edit question &raquo;".html_safe, edit_question_path(@question), class: "btn btn-warning", role: "button"%>
+  <%= link_to "Delete question &raquo;".html_safe, question_path(@question), class: "btn btn-warning", role: "button", :method => :delete %>
 <% end %>
 <ul id="comments">
   <h3>Question Comments:</h3>
   <% @question.comments.each do |comment| %>
     <li><%= comment.content %></li>
   <% end %>
-  <h4><%= link_to 'add comment to question', new_comment_path(question_id: @question.id ) %></h4>
+  <h4><%= link_to "Add comment to question &raquo;".html_safe, new_comment_path(question_id: @question.id), class: "btn btn-info", role: "button" %></h4>
 </ul>
 <ul id="answers">
   <h3>Answers:</h3>
@@ -30,5 +30,5 @@
     </div>
     </li>
   <% end %>
-  <h4><%= link_to 'add answer to question', new_question_answer_path(question_id: @question.id ) %></h4>
+  <h4><%= link_to "Add answer to question &raquo;".html_safe, new_question_answer_path(question_id: @question.id), class: "btn btn-info", role: "button" %></h4>
 </ul>
