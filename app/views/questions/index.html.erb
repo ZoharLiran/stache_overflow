@@ -6,12 +6,13 @@
       <% break if j >= @questions.length %>
       <div class="col-md-4">
         <h2><%= @questions[j].title %></h2>
-        <%= link_to @questions[j].content, question_path(q) %>
+        <%= link_to @questions[j].content, question_path(@questions[j]) %>
         <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
       </div>
     <% end %>
-    <% i = j %>
+    <% i = j + 1 %>
     </div>
+    <% break if i >= @questions.length %>
   <% end %>
 
   

@@ -10,12 +10,13 @@ require 'omniauth'
 require 'omniauth-twitter'
 require 'oauth'
 require 'awesome_print'
-
+require 'faker'
 # require "rails/test_unit/railtie"
 
 # Require the gems listed in Gemfile, including any gems
 # you've limited to :test, :development, or :production.
 Bundler.require(:default, Rails.env)
+
 
 module StacheOverflow
   class Application < Rails::Application
