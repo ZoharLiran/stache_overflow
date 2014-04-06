@@ -1,31 +1,34 @@
-<h1><%= @question.content %></h1>
+<h1><%= @question.title %></h1>
+<h2><%= @question.content %></h2>
 <br>
 <% if @username && logged_username == @username %>
-  <%= link_to 'edit question', edit_question_path(@question), class: "btn btn-info", role: "button"%>
-  <%= link_to 'delete question', question_path(@question), class: "btn btn-info", role: "button", :method => :delete %>
+  <%= link_to "Edit question &raquo;".html_safe, edit_question_path(@question), class: "btn btn-warning", role: "button"%>
+  <%= link_to "Delete question &raquo;".html_safe, question_path(@question), class: "btn btn-warning", role: "button", :method => :delete %>
 <% end %>
-<ul>
+<ul id="comments">
   <h3>Question Comments:</h3>
   <% @question.comments.each do |comment| %>
     <li><%= comment.content %></li>
   <% end %>
-  <h4><%= link_to 'add comment to question', new_comment_path(question_id: @question.id ) %></h4>
+  <h4><%= link_to "Add comment to question &raquo;".html_safe, new_comment_path(question_id: @question.id), class: "btn btn-info", role: "button" %></h4>
 </ul>
-<ul>
+<ul id="answers">
   <h3>Answers:</h3>
   <% @question.answers.each do |ans| %>
     <li>
-      <div class="col-mid-1">
-      <% if @question.best_answer_id == ans.id %>
-      <span class="glyphicon glyphicon-ok"></span><span class="img-replace">Best answer!</span>
-      <% else %>
-      <%= link_to 'Mark this answer as the best', question_best_answer_path(@question, answer_id: ans.id ) %>
-      <% end %>
-    </div>
-    <div class="col-mid-8">
-      <%= link_to ans.content, question_answer_path(@question, ans) %>
+      <div class="row">
+        <div class="col-md-1">
+        <% if @question.best_answer_id == ans.id %>
+        <i class="fa fa-check fa-3x"></i>
+        <% else %>
+        <%= link_to 'Mark this answer as the best', question_best_answer_path(@question, answer_id: ans.id ), :class => 'sm' %>
+        <% end %>
+      </div>
+      <div class="col-md-10">
+        <%= link_to ans.content, question_answer_path(@question, ans) %>
+      </div>
     </div>
     </li>
   <% end %>
-  <h4><%= link_to 'add answer to question', new_question_answer_path(question_id: @question.id ) %></h4>
+  <h4><%= link_to "Add answer to question &raquo;".html_safe, new_question_answer_path(question_id: @question.id), class: "btn btn-info", role: "button" %></h4>
 </ul>

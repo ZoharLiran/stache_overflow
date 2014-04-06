@@ -314,6 +314,7 @@ figure {
 img {
   vertical-align: middle;
 }
+
 .img-responsive,
 .thumbnail > img,
 .thumbnail a > img,
@@ -2049,7 +2050,7 @@ fieldset[disabled] .btn {
   color: #333;
   background-color: #fff;
   border-color: #ccc;
-  width: 10%;
+  /*width: 10%;*/
 }
 .btn-default:hover,
 .btn-default:focus,

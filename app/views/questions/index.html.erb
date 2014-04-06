@@ -1,6 +1,7 @@
 <div class="container">
   <!-- Example row of columns -->
-  <% for i in 0..@questions.length do %>
+  <% i = 0 %>
+  <% while i < @questions.length do %>
     <div class="row">
     <% for j in i..(i+2) do %>
       <% break if j >= @questions.length %>
@@ -19,10 +20,8 @@
 
   <hr>
 
-  <%= link_to 'new question', new_question_path %>
-  <footer>
-    <p>&copy; Stache Inc. 2014</p>
-  </footer>
+  <%= link_to "Ask a question &raquo;".html_safe, new_question_path, class: "btn btn-primary btn-lg", role: "button" %>
+  
 </div> <!-- /container -->
 
 
