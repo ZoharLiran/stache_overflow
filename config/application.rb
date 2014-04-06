@@ -11,7 +11,7 @@ require 'omniauth-twitter'
 require 'oauth'
 require 'awesome_print'
 require 'faker'
-require 'twilio-ruby'
+require 'plivo'
 # require "rails/test_unit/railtie"
 
 # Require the gems listed in Gemfile, including any gems
