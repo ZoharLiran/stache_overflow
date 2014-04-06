@@ -2,8 +2,8 @@ Question.destroy_all
 Answer.destroy_all
 Comment.destroy_all
 
-10.times do |i|
-  q = Question.create(title: "question #{i}", content:Faker::Lorem.sentence(3) + " ?")
+34.times do |i|
+  q = Question.create(title: "Question #{i}", content:Faker::Lorem.sentence(3) + " ?")
   5.times do |j|
     q.answers.create(content: Faker::Lorem.sentence(9))
   end
