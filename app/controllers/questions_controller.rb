@@ -54,14 +54,15 @@ class QuestionsController < ApplicationController
   end
 
   def increase_vote
-    question = Question.find params[:id] # ??? is this right? how to access id from ajax
+    question = Question.find params[:id]
     question.vote_count += 1
     question.save
+    # ok without a redirect? we don't want to redirect
   end
 
   def decrease_vote
-    question = Question.find params[:id] # ??? is this right? how to access id from ajax
-    question.vote_count -= 1
+    question = Question.find params[:id]
+    question.vote_count = question.vote_count - 1
     question.save
   end
 
