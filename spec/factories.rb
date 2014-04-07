@@ -7,4 +7,9 @@ FactoryGirl.define do
     content { Faker::Lorem.sentence }
     question
   end
+  factory :user do
+    name { Faker::Name.name }
+    email { Faker::Internet.email }
+    phone { Faker::PhoneNumber.phone_number }
+  end
 end
