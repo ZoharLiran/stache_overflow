@@ -23,9 +23,6 @@ class AnswersController < ApplicationController
     question = Question.find(params[:answer][:question_id])
     @answer = question.answers.create(params[:answer])
     if @answer.save
-      # p "$"*80
-      # p question.user.phone
-      # p "$"*80
       begin
         phone_communication(question.user) if question.user.phone
       rescue

@@ -1,9 +1,11 @@
-  <%= form_for @user, html: {class: 'ki-form stacked' } do |f| %>
-    <%= f.label :email %>
-    <%= f.text_field :email %>
+  <%= form_tag "/login", method: "post", class: 'ki-form stacked' do %>
+    <%= label_tag :email %>
     <br>
-    <%= f.label :password %>
-    <%= f.password_field :password %>
+    <%= text_field_tag :email %>
     <br>
-    <%= f.submit 'Sign In', class: 'ki-button'%>
+    <%= label_tag :password %>
+    <br>
+    <%= password_field_tag :password %>
+    <br>
+    <%= submit_tag 'Sign In', class: 'ki-button', id: 'signin'%>
   <% end %>

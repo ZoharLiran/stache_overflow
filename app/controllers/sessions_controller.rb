@@ -20,4 +20,20 @@ class SessionsController < ApplicationController
     session.clear
     redirect_to root_path
   end
+
+  def login
+    user = User.find_by_email(params[:email])
+    pass = false
+    if user
+      pass = user.password == params[:password] ? true : false
+    else
+      pass = false
+    end
+    if pass
+      session[:user_id] = user.id
+      redirect_to user_path id: user.id
+    else
+      redirect_to new_user_path
+    end
+  end
 end
