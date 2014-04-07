@@ -1,0 +1,9 @@
+  <%= form_for @user, html: {class: 'ki-form stacked' } do |f| %>
+    <%= f.label :email %>
+    <%= f.text_field :email %>
+    <br>
+    <%= f.label :password %>
+    <%= f.password_field :password %>
+    <br>
+    <%= f.submit 'Sign In', class: 'ki-button'%>
+  <% end %>

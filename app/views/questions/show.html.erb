@@ -1,7 +1,8 @@
 <h1><%= @question.title %></h1>
+<p>Author: <%= @question.user.name %></p>
 <h2><%= @question.content %></h2>
 <br>
-<% if @username && logged_username == @username %>
+<% if @right_user %>
   <%= link_to "Edit question &raquo;".html_safe, edit_question_path(@question), class: "btn btn-warning", role: "button"%>
   <%= link_to "Delete question &raquo;".html_safe, question_path(@question), class: "btn btn-warning", role: "button", :method => :delete %>
 <% end %>
@@ -18,12 +19,14 @@
     <li>
       <div class="row">
         <div class="col-md-1">
-        <% if @question.best_answer_id == ans.id %>
-        <i class="fa fa-check fa-3x"></i>
-        <% else %>
-        <%= link_to 'Mark this answer as the best', question_best_answer_path(@question, answer_id: ans.id ), :class => 'sm' %>
-        <% end %>
-      </div>
+          <% if @question.best_answer_id == ans.id %>
+            <i class="fa fa-check fa-3x"></i>
+          <% else %>
+            <% if @right_user %>
+              <i><%= link_to "", question_best_answer_path(@question, answer_id: ans.id ), :class => 'fa fa-star-half-o fa-5' %></i>
+            <% end %>
+          <% end %>
+        </div>
       <div class="col-md-10">
         <%= link_to ans.content, question_answer_path(@question, ans) %>
       </div>

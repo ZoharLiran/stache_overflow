@@ -314,6 +314,11 @@ figure {
 img {
   vertical-align: middle;
 }
+#user_name_window {
+  margin-left:auto;
+  margin-right:auto;
+  width:70%;
+}
 
 .img-responsive,
 .thumbnail > img,

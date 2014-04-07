@@ -25,7 +25,7 @@ class QuestionsController < ApplicationController
 
   def show
     @question = Question.find params[:id]
-    @username = @question.user.name if @question.user
+    @right_user = get_right_user(@question)
   end
 
   def edit
