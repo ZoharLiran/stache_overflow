@@ -27,6 +27,15 @@ describe QuestionsController do
     end
   end
 
+  context "#delete" do
+    it "deletes a question" do
+      question_delete = FactoryGirl.create :question
+      expect {
+        delete :destroy, :id => question_delete
+      }.to change { Question.count }.by(-1)
+    end
+  end
+
   context "#best_answer" do
     it "stores the best answer's id" do
       expect {
