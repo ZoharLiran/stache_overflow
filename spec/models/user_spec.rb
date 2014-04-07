@@ -1,8 +1,7 @@
 require 'spec_helper'
 
-# describe User do
-#   before { @user = User.new(name: "Johnny Doe", email: "john@doe.com") }
-#   subject { @user }
-#   it { should respond.to(:name) }
-#   it { should respond.to(:email) }
-# end
+describe User do
+  it "can create a new user" do
+    expect(!!FactoryGirl.create(:user)).to eq(true)
+  end
+end
