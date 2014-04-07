@@ -23,8 +23,11 @@ class AnswersController < ApplicationController
     question = Question.find(params[:answer][:question_id])
     @answer = question.answers.create(params[:answer])
     if @answer.save
+      p "$"*80
+      p question.user.phone
+      p "$"*80
       
-      phone_communication(question.user)
+      phone_communication(question.user) if question.user.phone
       redirect_to question
     else
       render :new

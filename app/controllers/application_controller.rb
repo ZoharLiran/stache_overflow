@@ -16,4 +16,13 @@ class ApplicationController < ActionController::Base
     @current_user = user
     session[:user_id] = user.id
   end
+
+  def get_right_user(question)
+    return false if question.user == nil
+    if question.user.name == logged_username
+      return true
+    else
+      return false
+    end
+  end
 end

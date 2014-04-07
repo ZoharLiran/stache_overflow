@@ -29,7 +29,10 @@
               <%= link_to "Logout", '/logout', class: "btn btn-success", role: "button" %> 
               <%= link_to "Profile", user_path(logged_user), class: "btn btn-success", role: "button" %> 
             <% else %>
-              <%= link_to "Sign In", '/auth/twitter', class: "btn btn-success", role: "button" %> 
+              <%= link_to image_tag("sign-in-with-twitter-gray.png", :border => 0), '/auth/twitter', role: "button" %>
+              <br>
+              <br>
+              <%= link_to "Sign In With Us", '/users/new', class: "btn btn-success", role: "button" %> 
             <% end %>
           </form>
         </div><!--/.navbar-collapse -->
@@ -39,6 +42,7 @@
 
   <div class="jumbotron">
     <div class="container">
+      <br>
       <h2>Welcome!</h2>
       <p>Stache Overflow is a system that was designed to answer all your questions. Enjoy!</p>
       <% if signed_in? %>
