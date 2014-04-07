@@ -57,7 +57,6 @@ class QuestionsController < ApplicationController
     question = Question.find params[:id].to_i
     question.vote_count += 1
     question.save
-    # ok without a redirect? we don't want to redirect
   end
 
   def decrease_vote
@@ -65,7 +64,6 @@ class QuestionsController < ApplicationController
     question.vote_count = question.vote_count - 1
     question.save
   end
-
 
   private
   def question_params
