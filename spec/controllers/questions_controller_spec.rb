@@ -41,7 +41,7 @@ describe QuestionsController do
       expect {
         test_question.best_answer_id = test_answer.id
         test_question.save!
-      }.to change { Question.find(test_question.id).best_answer_id }.to eq(test_answer.id)
+      }.to change { test_question.reload.best_answer_id }.to eq(test_answer.id)
     end
   end
 end
