@@ -23,7 +23,7 @@ describe QuestionsController do
     it "updates a question" do
       update_str = "this is a test update"
       put :update, :id => test_question, :question => { :content => update_str }
-      expect(Question.find(test_question.id).content).to eq(update_str)
+      expect(test_question.reload.content).to eq(update_str)
     end
   end
 
