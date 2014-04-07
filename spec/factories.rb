@@ -12,4 +12,7 @@ FactoryGirl.define do
     email { Faker::Internet.email }
     phone { Faker::PhoneNumber.phone_number }
   end
+  factory :comment do
+    content { Faker::Lorem.sentence }
+  end
 end

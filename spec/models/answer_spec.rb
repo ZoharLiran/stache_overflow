@@ -1,5 +1,7 @@
 require 'spec_helper'
 
 describe Answer do
-  pending "add some examples to (or delete) #{__FILE__}"
+  it "can create a new answer" do
+    expect(!!FactoryGirl.create(:answer)).to eq(true)
+  end
 end

@@ -1,5 +1,7 @@
 require 'spec_helper'
 
-# describe Comment do
-#   pending "add some examples to (or delete) #{__FILE__}"
-# end
+describe Comment do
+  it "can create a new comment" do
+    expect(!!FactoryGirl.create(:comment)).to eq(true)
+  end
+end
