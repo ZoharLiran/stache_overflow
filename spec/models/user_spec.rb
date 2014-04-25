@@ -1,4 +1,4 @@
-require 'spec_helper'
+require '../spec_helper'
 
 describe User do
   it "can create a new user" do
